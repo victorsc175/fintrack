@@ -9,10 +9,10 @@
         = button_tag type: :submit, class: 'btn btn-lg btn-success' do
           i.fa.fa-search Look up a stock
   - if @stock
-    #stock-lookup-results.wel.results-block
+    #stock-lookup-results.well.results-block
       strong Symbol:
       = @stock.ticker
       strong Name:
       = @stock.name
       strong Price:
-      = @stock.price
+      = @stock.last_price
