@@ -1,0 +1,112 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/helpers/stocks_helper.rb": [
+        1,
+        null
+      ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/controllers/stocks_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/controllers/users_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/models/stock.rb": [
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/controllers/welcome_controller.rb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1518875734
+  }
+}
