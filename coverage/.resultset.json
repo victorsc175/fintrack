@@ -55,27 +55,30 @@
         null,
         null
       ],
+      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/controllers/welcome_controller.rb": [
+        1,
+        1,
+        null
+      ],
       "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/models/stock.rb": [
         1,
         1,
-        0,
+        1,
+        2,
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        null,
+        null,
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
+        2,
+        2,
+        null,
         null,
         null
       ],
@@ -100,13 +103,8 @@
         0,
         0,
         0
-      ],
-      "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/controllers/welcome_controller.rb": [
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1518876508
+    "timestamp": 1518880259
   }
 }

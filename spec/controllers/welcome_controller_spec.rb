@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, type: :controller do
+RSpec.describe WelcomeController, type: :controller do
   
   let(:user) { FactoryBot.create(:user) }
   
@@ -11,9 +11,9 @@ RSpec.describe UsersController, type: :controller do
     sign_in user
   end
 
-  describe "GET #my_portfolio" do
+  describe "GET #index" do
     it "returns http success" do
-      get :my_portfolio
+      get :index
       expect(response).to have_http_status(:success)
     end
   end

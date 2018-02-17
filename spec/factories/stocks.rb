@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :stock do
-    ticker "MyString"
-    name "MyString"
-    last_price "9.99"
+    ticker "GOOG"
+    name "Alphabet Inc"
+    last_price "1088.41"
   end
 end
