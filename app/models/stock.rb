@@ -1,5 +1,7 @@
 # Methods for stocks
 class Stock < ApplicationRecord
+  has_many :user_stocks
+  has_many :users, through: :user_stocks
   class << self
     def find_by_ticker(ticker)
       find_by(ticker: ticker)
