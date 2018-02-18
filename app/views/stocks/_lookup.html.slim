@@ -17,6 +17,17 @@
       = @stock.name
       strong Price:
       = @stock.last_price
-  - else
-    #stock-lookup-errors
-      strong Stock was not found
+      - if current_user.can_add_stock?(@stock.ticker)
+        = link_to 'Add to my Stocks', user_stocks_path(user:current_user,
+                                      stock_ticker: @stock.ticker,
+                                      stock_id: @stock.id || ''),
+                                      class: 'btn btn-xs btn-success',
+                                      method: :post
+      - else
+        span.label.label-default
+          Stock cannot be added because you have already added 
+          - unless current_user.under_stock_limit?
+            10 stocks
+          - if current_user.stock_already_added?(@stock.ticker)
+            this stock
+  #stock-lookup-errors
