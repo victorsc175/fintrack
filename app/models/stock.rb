@@ -7,15 +7,28 @@ class Stock < ApplicationRecord
 
     def new_from_lookup(ticker)
       stock = StockQuote::Stock.quote(ticker)
-      return nil unless stock.is_a?(StockQuote::Stock)
-      new(ticker: stock.symbol,
-          name: stock.name,
-          last_price: price(stock))
+      correct?(stock) && new(ticker: stock.symbol,
+                             name: stock.name,
+                             last_price: price(stock))
     end
 
     def price(stock)
-      return stock.eo.to_f unless stock.eo.empty?
-      stock.op.delete(',').to_f
+      eod_price(stock) || open_price(stock)
+    end
+    
+    def correct?(stock)
+      stock.is_a?(StockQuote::Stock) && stock.name && !stock.name.empty?
+    end
+    
+    def eod_price(stock)
+      eod_price = stock.eo
+      eod_price && !eod_price.empty? && eod_price.to_f
+    end
+    
+    def open_price(stock)
+      open_price = stock.op
+      return 0 if !open_price || open_price.empty? 
+      open_price.delete(',').to_f
     end
   end
 end

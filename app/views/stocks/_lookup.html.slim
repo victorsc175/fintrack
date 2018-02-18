@@ -8,6 +8,7 @@
       .col-md-2
         = button_tag type: :submit, class: 'btn btn-lg btn-success' do
           i.fa.fa-search Look up a stock
+  = render 'common/spinner' 
   - if @stock
     #stock-lookup-results.well.results-block
       strong Symbol:
@@ -16,3 +17,6 @@
       = @stock.name
       strong Price:
       = @stock.last_price
+  - else
+    #stock-lookup-errors
+      strong Stock was not found
