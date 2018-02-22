@@ -1,0 +1,3 @@
+$('#friend-lookup').replaceWith("<%= escape_javascript(render 'lookup') %>");
+$('#friend-lookup-errors').replaceWith("<%= @friend ? '' : 'User was not found.' %>");
+init_friend_lookup();
