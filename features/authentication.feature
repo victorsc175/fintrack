@@ -33,8 +33,6 @@ Feature: Authentication system, users can sign-up, edit their profile, log in an
       Then I should stay on Log in page
       
     Scenario: edit profile
-      Given I am a guest user
-      When I go to Welcome page
-      And I fill in credentials
+      Given I am a logged in user
       And I go to My Profile page
       Then I can change profile details
