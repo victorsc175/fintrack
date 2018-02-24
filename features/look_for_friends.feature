@@ -28,4 +28,19 @@ Feature: Users can look for friends, or other users of the app, by name (first, 
     Given I am a logged in user
     When I go to My Friends page
     And I search for friend by email
-    Then I should see user found    
+    Then I should see user found
+    
+  @javascript
+    Scenario: add friend
+    Given I am a logged in user
+    When I go to My Friends page
+    And I search for friend by first name
+    And I add user as a friend
+    Then I should see user in My Friends list
+    
+  @javascript
+    Scenario: add friend
+    Given I am a logged in user
+    When I go to My Friends page
+    And I remove user from friends
+    Then I should not see user in My Friends list    

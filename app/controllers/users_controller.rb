@@ -11,12 +11,7 @@ class UsersController < ApplicationController
   
   def search
     @users = User.search(params[:search_param])
-    #if @users.any?
-    #  @users = current_user.except_current_user(@users)
-    #  render partial: 'friends/lookup'
-    #else
-    #  render status: :not_found, nothing: true
-    #end
+    @users = current_user.except_current_user(@users) if @users.any?
     respond_to do |format|
       format.js
     end

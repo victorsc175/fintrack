@@ -33,5 +33,15 @@ Then("I should have the stock removed from the stock list") do
 end
 
 Then("I should have ability to add {int} stocks to my portfolio") do |int|
-  pending # Write code here that turns the phrase above into concrete actions
+  visit '/'
+  click_link 'My Portfolio'
+  ['FB','BP','DF','RT','GOOG','DD','SA','XESQ','ZC','KLK'].each do |ticker|
+    fill_in 'stock', with: ticker
+    click_button 'Look up a stock'
+    click_link 'Add to my Stocks'
+  end
+  expect(page).to have_content('Stock KLK was successfully added')
+  fill_in 'stock', with: 'P'
+  click_button 'Look up a stock'
+  expect(page).to have_content('Stock cannot be added')
 end

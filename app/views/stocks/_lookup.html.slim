@@ -25,7 +25,7 @@
                                       method: :post
       - else
         span.label.label-default
-          Stock cannot be added because you have already added 
+          'Stock cannot be added because you have already added 
           - unless current_user.under_stock_limit?
             10 stocks
           - if current_user.stock_already_added?(@stock.ticker)
