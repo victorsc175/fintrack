@@ -16,7 +16,7 @@
     #friend-lookup-results.well.results-block.col-md-10
       table.search-result-table.col-md-12
         tbody
-          = @users.each do |user|
+          - @users.each do |user|
             tr
               td
                 strong Name:

@@ -31,3 +31,7 @@ end
 Then("I should have the stock removed from the stock list") do
   expect(page).to have_content('Stock was successfully removed from portfolio.')
 end
+
+Then("I should have ability to add {int} stocks to my portfolio") do |int|
+  pending # Write code here that turns the phrase above into concrete actions
+end
