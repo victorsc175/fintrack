@@ -36,3 +36,9 @@ Feature: Authentication system, users can sign-up, edit their profile, log in an
       Given I am a logged in user
       And I go to My Profile page
       Then I can change profile details
+      
+    Scenario: log outs
+      Given I am a logged in user
+      And I go to Welcome page
+      And I log out
+      Then I should be logged out

@@ -78,3 +78,11 @@ Then("I can change profile details") do
   click_button 'Update'
   expect(page).to have_content('Your account has been updated successfully.')
 end
+
+Given("I log out") do
+  click_link 'Logout'
+end
+
+Then("I should be logged out") do
+  expect(page).to have_content('You need to sign in or sign up before continuing.')
+end

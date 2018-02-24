@@ -15,3 +15,19 @@ end
 Then("I should see ticker details") do
   expect(page).to have_content('Alphabet')
 end
+
+When("I add the stock") do
+  click_link 'Add to my Stocks'
+end
+
+Then("I should have the stock added to the stock list") do
+  expect(page).to have_content('Stock GOOG was successfully added')
+end
+
+When("I delete the stock") do
+  click_link 'Delete'
+end
+
+Then("I should have the stock removed from the stock list") do
+  expect(page).to have_content('Stock was successfully removed from portfolio.')
+end

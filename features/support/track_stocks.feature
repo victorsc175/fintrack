@@ -15,3 +15,20 @@ Feature: Users can track stocks, upto 10 per user. The profile page will display
       When I go to My Portfolio page
       And I search for some stock by ticker
       Then I should see ticker details
+      
+  @javascript  
+    Scenario: Look add a stock
+      Given I am a logged in user
+      When I go to My Portfolio page
+      And I search for some stock by ticker
+      And I add the stock
+      Then I should have the stock added to the stock list
+      
+  @javascript  
+    Scenario: Remove stock
+      Given I am a logged in user
+      When I go to My Portfolio page
+      And I search for some stock by ticker
+      And I add the stock
+      And I delete the stock
+      Then I should have the stock removed from the stock list
