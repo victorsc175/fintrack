@@ -53,6 +53,8 @@ group :test do
   gem 'rails-controller-testing'
   gem 'shoulda-matchers', require: false
   gem 'simplecov', require: false
+  gem 'poltergeist'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
 end
 
 group :development do
