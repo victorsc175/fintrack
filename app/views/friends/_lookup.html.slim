@@ -27,13 +27,13 @@
               td
                 strong Profile:
                 = link_to 'View Profile', user_path(user),
-                                          class: 'btn btn-xs btn-success'
+                                          class: 'btn btn-xs btn-success action'
                 - if current_user.not_friends_with?(user)
                   = link_to 'Add as my friend', add_friend_path(user: current_user, friend: user),
-                                                class: 'btn btn-xs btn-success',
+                                                class: 'btn btn-xs btn-success action',
                                                 method: :post
                 - else
-                  span.label.label-primary
+                  span.label.label-primary.action
                     'You are friends
   - else
     p.lead.col-md-12

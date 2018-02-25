@@ -31,3 +31,13 @@
     background-color: darken(#d9534f, 20%) !important;
   }
 }
+
+strong, .action {
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+footer p {
+  margin-top: 10px;
+}

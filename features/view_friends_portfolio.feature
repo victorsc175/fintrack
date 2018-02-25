@@ -6,7 +6,7 @@ Feature: Users can view portfolio of stocks their friends are tracking for inves
   
   @javascript
     Scenario: view friend's portfolio
-    Given I am a logged in user
-    When I go to My Friends page
-    And I view friend's profile
-    Then I should see friend's stocks portfolio
+      Given I am a logged in user
+      When I go to My Friends page
+      And I view friend's profile
+      Then I should see friend's stocks portfolio

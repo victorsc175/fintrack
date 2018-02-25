@@ -2,7 +2,7 @@
 class UsersController < ApplicationController
   def my_portfolio
     @user = current_user
-    @user_stocks = current_user.stocks
+    @user_stocks = User.includes(:stocks).find(current_user.id).user_stocks
   end
   
   def my_friends
