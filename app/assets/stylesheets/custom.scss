@@ -41,3 +41,8 @@ strong, .action {
 footer p {
   margin-top: 10px;
 }
+
+span.current-user, span.spinner-message {
+  display: inline-block;
+  margin-left: 10px;
+}

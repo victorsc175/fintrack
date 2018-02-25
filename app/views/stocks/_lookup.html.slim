@@ -7,7 +7,7 @@
                          autofocus: true, class: 'form-control search-box input-lg'
       .col-md-2
         = button_tag type: :submit, class: 'btn btn-lg btn-success' do
-          i.fa.fa-search Look up a stock
+          i.fa.fa-search 
   = render 'common/spinner' 
   - if @stock
     #stock-lookup-results.well.results-block
@@ -24,10 +24,10 @@
                                       class: 'btn btn-xs btn-success action',
                                       method: :post
       - else
-        span.label.label-default
-          'Stock cannot be added because you have already added 
+        span.label.label-default.action
+          'You have added 
           - unless current_user.under_stock_limit?
-            10 stocks
+            '10 stocks
           - if current_user.stock_already_added?(@stock.ticker)
-            this stock
+            'this stock already
   #stock-lookup-errors
