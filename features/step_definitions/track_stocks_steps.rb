@@ -43,5 +43,5 @@ Then("I should have ability to add {int} stocks to my portfolio") do |int|
   expect(page).to have_content('Stock KLK was successfully added')
   fill_in 'stock', with: 'P'
   click_button 'btn-lookup'
-  expect(page).to have_content('Stock cannot be added')
+  expect(page).to have_content('You have added 10 stocks')
 end

@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @users = current_user.except_current_user(@users) if @users.any?
     respond_to do |format|
       format.js
+      format.html { render :my_portfolio }
     end
   end
   
