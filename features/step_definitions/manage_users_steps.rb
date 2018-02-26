@@ -12,7 +12,7 @@ When("I search for friend by first name") do
                            first_name: 'Alex',
                            last_name: 'Black'
   fill_in 'search_param', with: 'Alex'
-  find('button', text: 'Look up a friend').trigger('click')
+  find('button', id: 'btn-lookup').trigger('click')
 end
 
 Then("I should see user found") do
@@ -24,7 +24,7 @@ When("I search for friend by last name") do
                            first_name: 'Alex',
                            last_name: 'Black'
   fill_in 'search_param', with: 'Black'
-  find('button', text: 'Look up a friend').trigger('click')
+  find('button', id: 'btn-lookup').trigger('click')
 end
 
 When("I search for friend by email") do
@@ -32,7 +32,7 @@ When("I search for friend by email") do
                            first_name: 'Alex',
                            last_name: 'Black'
   fill_in 'search_param', with: 'some@email.com'
-  find('button', text: 'Look up a friend').trigger('click')
+  find('button', id: 'btn-lookup').trigger('click')
 end
 
 When("I add user as a friend") do
@@ -48,7 +48,7 @@ When("I remove user from friends") do
                            first_name: 'Alex',
                            last_name: 'Black'
   fill_in 'search_param', with: 'some@email.com'
-  find('button', text: 'Look up a friend').trigger('click')
+  find('button', id: 'btn-lookup').trigger('click')
   find('a', text: 'Add as my friend').trigger('click')
   find('a', text: 'Remove Friend').trigger('click')
 end
@@ -62,7 +62,7 @@ When("I view friend's profile") do
                            first_name: 'Alex',
                            last_name: 'Black'
   fill_in 'search_param', with: 'some@email.com'
-  find('button', text: 'Look up a friend').trigger('click')
+  find('button', id: 'btn-lookup').trigger('click')
   find('a', text: 'Add as my friend').trigger('click')
   click_link 'View Profile'
 end

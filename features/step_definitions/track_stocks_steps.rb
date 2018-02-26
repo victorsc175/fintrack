@@ -9,7 +9,7 @@ end
 
 When("I search for some stock by ticker") do
   fill_in 'stock', with: 'GOOG'
-  click_button 'Look up a stock'
+  click_button 'btn-lookup'
 end
 
 Then("I should see ticker details") do
@@ -37,11 +37,11 @@ Then("I should have ability to add {int} stocks to my portfolio") do |int|
   click_link 'My Portfolio'
   ['FB','BP','DF','RT','GOOG','DD','SA','XESQ','ZC','KLK'].each do |ticker|
     fill_in 'stock', with: ticker
-    click_button 'Look up a stock'
+    click_button 'btn-lookup'
     click_link 'Add to my Stocks'
   end
   expect(page).to have_content('Stock KLK was successfully added')
   fill_in 'stock', with: 'P'
-  click_button 'Look up a stock'
+  click_button 'btn-lookup'
   expect(page).to have_content('Stock cannot be added')
 end

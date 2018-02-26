@@ -11,10 +11,12 @@
           li = link_to 'My Portfolio', my_portfolio_path
           li = link_to 'My Friends', my_friends_path
           li = link_to 'My Profile', edit_registration_path(current_user)
-        ul.nav.navbar-right.col-md-4
-          li.col-md-8.user-name.text-right
+        ul.nav.navbar-nav.navbar-right.col-sm-4
+          li.col-sm-4.col-sm-push-8.logout
+            = link_to 'Logout', destroy_user_session_path, method: :delete
+          li.col-sm-8.col-sm-pull-4.user-name.text-right
             i.fa.fa-user
             span.current-user
               = current_user.full_name.present? ? current_user.full_name : current_user.email
-          li.col-md-4.logout
-            = link_to 'Logout', destroy_user_session_path, class: 'btn btn-xs btn-danger', method: :delete
+          
+          

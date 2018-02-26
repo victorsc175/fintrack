@@ -2,14 +2,14 @@
   h3 Search for Friends
   = form_tag search_friends_path, remote: true, method: :get, id: 'friend-lookup-form' do
     .form-group.row.no-padding.test-center.col-md-12
-      .col-md-10
+      .col-xs-10
         = text_field_tag :search_param,
                          params[:search_param],
                          placeholder: 'First name, last name or email',
                          autofocus: true,
                          class: 'form-control search-box input-lg'
-      .col-md-2
-        = button_tag type: :submit, class: 'btn btn-lg btn-success' do
+      .col-xs-2
+        = button_tag type: :submit, class: 'btn btn-lg btn-success', id: 'btn-lookup' do
           i.fa.fa-search 
   = render 'common/spinner' 
   - if @users && !@users.empty?

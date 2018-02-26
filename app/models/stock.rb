@@ -19,7 +19,9 @@ class Stock < ApplicationRecord
     end
     
     def correct?(stock)
-      stock.is_a?(StockQuote::Stock) && stock.name && !stock.name.empty?
+      stock.is_a?(StockQuote::Stock) &&
+        stock.symbol &&
+        !stock.symbol.empty?
     end
     
     def eod_price(stock)

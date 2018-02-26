@@ -2,7 +2,7 @@
 class UsersController < ApplicationController
   def my_portfolio
     @user = current_user
-    @user_stocks = User.includes(:stocks).find(current_user.id).user_stocks
+    @user_stocks = user_stocks_with_details
   end
   
   def my_friends
@@ -25,6 +25,12 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @user_stocks = @user.stocks
+    @user_stocks = user_stocks_with_details
+  end
+  
+  private
+  
+  def user_stocks_with_details
+    User.includes(:stocks).find(current_user.id).user_stocks
   end
 end
