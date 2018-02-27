@@ -1,10 +1,10 @@
 window.init_stock_lookup = ->
   $('#stock-lookup-form').on 'ajax:before', (event) ->
-    $('#spinner').show()
+    showSpinner()
     $('#stock-lookup-results').hide()
     
   $('#stock-lookup-form').on 'ajax:after', (event) ->
-    $('#spinner').hide()
+    hideSpinner()
 
 $(document).ready ->
   init_stock_lookup()
