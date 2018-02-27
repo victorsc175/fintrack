@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :user_stock do
-    user ""
-    stock ""
+    user ''
+    stock ''
   end
 end

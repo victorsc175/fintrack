@@ -2,10 +2,12 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
   let(:user) { FactoryBot.create(:user) }
-  let!(:friend) { FactoryBot.create(:user, email: 'friend@mail.com',
-                                           password: 'friend',
-                                           first_name: 'Mark',
-                                           last_name: 'Bone') }
+  let!(:friend) do
+    FactoryBot.create(:user, email: 'friend@mail.com',
+                             password: 'friend',
+                             first_name: 'Mark',
+                             last_name: 'Bone')
+  end
   let(:stock) { FactoryBot.create :stock }
   let(:valid_session) { {} }
 
@@ -24,7 +26,7 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
-  
+
   describe 'GET #my_friends' do
     it 'returns list of friends' do
       FactoryBot.create :friendship, user: user, friend: friend
@@ -33,7 +35,7 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
-  
+
   describe 'POST #search' do
     it 'returns list of friends with correct request' do
       post :search, params: { search_param: friend.first_name }, session: valid_session
@@ -41,14 +43,14 @@ RSpec.describe UsersController, type: :controller do
       expect(assigns(:users).size).to be > 0
       expect(response).to have_http_status(:success)
     end
-    
+
     it 'returns empty array with incorrect request' do
       post :search, params: { search_param: '' }, session: valid_session
       expect(assigns(:users)).to be_empty
       expect(response).to have_http_status(:success)
     end
   end
-  
+
   describe 'POST #add_friend' do
     it 'adds friend' do
       friend
@@ -58,7 +60,7 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to have_http_status(302)
     end
   end
-  
+
   describe 'GET #show' do
     it 'shows user with user stocks' do
       stock

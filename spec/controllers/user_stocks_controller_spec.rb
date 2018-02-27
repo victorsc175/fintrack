@@ -24,7 +24,6 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe UserStocksController, type: :controller do
-
   # This should return the minimal set of attributes required to create a valid
   # UserStock. As you add validations to UserStock, be sure to
   # adjust the attributes here as well.
@@ -37,42 +36,41 @@ RSpec.describe UserStocksController, type: :controller do
   let(:stock) { FactoryBot.create :stock }
   let(:user_stock) { FactoryBot.create :user_stock, user: user, stock: stock }
   let(:ticker) { 'RT' }
-  
+
   before(:each) do
     @request.env['devise.mapping'] = Devise.mappings[:user]
     sign_in user
   end
 
-  describe "POST #create" do
-    it "creates a new UserStock for locally stored stock" do
+  describe 'POST #create' do
+    it 'creates a new UserStock for locally stored stock' do
       expect(assigns(:user_stock)).to eq(user.user_stocks.first)
-      expect {
+      expect do
         post :create, params: { stock_id: stock.id }, session: valid_session
-      }.to change(user.stocks, :count).by(1)
+      end.to change(user.stocks, :count).by(1)
       expect(response).to redirect_to(my_portfolio_path)
     end
 
     it 'creates UserStock for new stock' do
-      expect {
+      expect do
         post :create, params: { stock_ticker: ticker }, session: valid_session
-      }.to change(user.stocks, :count).by(1)
+      end.to change(user.stocks, :count).by(1)
       expect(response).to redirect_to(my_portfolio_path)
     end
   end
 
-  describe "DELETE #destroy" do
-    it "destroys the requested user_stock" do
+  describe 'DELETE #destroy' do
+    it 'destroys the requested user_stock' do
       user_stock
-      expect {
+      expect do
         delete :destroy, params: { id: user_stock.to_param }, session: valid_session
-      }.to change(UserStock, :count).by(-1)
+      end.to change(UserStock, :count).by(-1)
     end
 
-    it "redirects to the user_stocks list" do
+    it 'redirects to the user_stocks list' do
       user_stock
-      delete :destroy, params: {id: user_stock.to_param}, session: valid_session
+      delete :destroy, params: { id: user_stock.to_param }, session: valid_session
       expect(response).to redirect_to(my_portfolio_path)
     end
   end
-
 end

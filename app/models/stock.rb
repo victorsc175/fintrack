@@ -17,21 +17,21 @@ class Stock < ApplicationRecord
     def price(stock)
       eod_price(stock) || open_price(stock)
     end
-    
+
     def correct?(stock)
       stock.is_a?(StockQuote::Stock) &&
         stock.symbol &&
         !stock.symbol.empty?
     end
-    
+
     def eod_price(stock)
       eod_price = stock.eo
       eod_price && !eod_price.empty? && eod_price.to_f
     end
-    
+
     def open_price(stock)
       open_price = stock.op
-      return 0 if !open_price || open_price.empty? 
+      return 0 if !open_price || open_price.empty?
       open_price.delete(',').to_f
     end
   end
