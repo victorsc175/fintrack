@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @users = User.search(params[:search_param])
     @users = current_user.except_current_user(@users) if @users.any?
     respond_to do |format|
-      format.js
+      format.js { render 'search.js.erb.coffee'}
       format.html { render :my_portfolio }
     end
   end

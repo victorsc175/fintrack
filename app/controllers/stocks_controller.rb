@@ -6,7 +6,7 @@ class StocksController < ApplicationController
       @stock ||= Stock.new_from_lookup(params[:stock])
     end
     respond_to do |format|
-      format.js
+      format.js { render 'search.js.erb.coffee' }
     end
   end
 end

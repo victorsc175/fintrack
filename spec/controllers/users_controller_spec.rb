@@ -23,8 +23,6 @@ RSpec.describe UsersController, type: :controller do
       expect(assigns(:user_stocks).first).to be_a(UserStock)
       expect(response).to have_http_status(:success)
     end
-    
-    it
   end
   
   describe 'GET #my_friends' do
@@ -65,9 +63,10 @@ RSpec.describe UsersController, type: :controller do
     it 'shows user with user stocks' do
       stock
       FactoryBot.create :user_stock, user: user, stock: stock
-      post :show, params: { id: user.id }
+      post :show, params: { id: user.id }, session: valid_session
       expect(assigns(:user)).to eq(user)
       expect(assigns(:user_stocks).first).to be_a(UserStock)
+      expect(response).to have_http_status(:success)
     end
   end
 end

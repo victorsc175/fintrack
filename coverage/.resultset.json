@@ -84,10 +84,10 @@
       "/home/victor/Documents/Aptana Studio 3 Workspace/fintrack/app/controllers/friendships_controller.rb": [
         1,
         1,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        2,
         null,
         null,
         null
@@ -368,6 +368,6 @@
         0
       ]
     },
-    "timestamp": 1519655671
+    "timestamp": 1519675010
   }
 }
