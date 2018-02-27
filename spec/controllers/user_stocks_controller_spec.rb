@@ -28,53 +28,50 @@ RSpec.describe UserStocksController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # UserStock. As you add validations to UserStock, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
-
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # UserStocksController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+  let(:user) { FactoryBot.create :user }
+  let(:stock) { FactoryBot.create :stock }
+  let(:user_stock) { FactoryBot.create :user_stock, user: user, stock: stock }
+  let(:ticker) { 'RT' }
+  
+  before(:each) do
+    @request.env['devise.mapping'] = Devise.mappings[:user]
+    sign_in user
+  end
 
   describe "POST #create" do
-    context "with valid params" do
-      it "creates a new UserStock" do
-        expect {
-          post :create, params: {user_stock: valid_attributes}, session: valid_session
-        }.to change(UserStock, :count).by(1)
-      end
-
-      it "redirects to the created user_stock" do
-        post :create, params: {user_stock: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(UserStock.last)
-      end
+    it "creates a new UserStock for locally stored stock" do
+      expect(assigns(:user_stock)).to eq(user.user_stocks.first)
+      expect {
+        post :create, params: { stock_id: stock.id }, session: valid_session
+      }.to change(user.stocks, :count).by(1)
+      expect(response).to redirect_to(my_portfolio_path)
     end
 
-    context "with invalid params" do
-      it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {user_stock: invalid_attributes}, session: valid_session
-        expect(response).to be_success
-      end
+    it 'creates UserStock for new stock' do
+      expect {
+        post :create, params: { stock_ticker: ticker }, session: valid_session
+      }.to change(user.stocks, :count).by(1)
+      expect(response).to redirect_to(my_portfolio_path)
     end
   end
 
   describe "DELETE #destroy" do
     it "destroys the requested user_stock" do
-      user_stock = UserStock.create! valid_attributes
+      user_stock
       expect {
-        delete :destroy, params: {id: user_stock.to_param}, session: valid_session
+        delete :destroy, params: { id: user_stock.to_param }, session: valid_session
       }.to change(UserStock, :count).by(-1)
     end
 
     it "redirects to the user_stocks list" do
-      user_stock = UserStock.create! valid_attributes
+      user_stock
       delete :destroy, params: {id: user_stock.to_param}, session: valid_session
-      expect(response).to redirect_to(user_stocks_url)
+      expect(response).to redirect_to(my_portfolio_path)
     end
   end
 

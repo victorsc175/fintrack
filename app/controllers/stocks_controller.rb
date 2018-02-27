@@ -7,6 +7,7 @@ class StocksController < ApplicationController
     end
     respond_to do |format|
       format.js { render 'search.js.erb.coffee' }
+      format.html { render 'users/my_portfolio' }
     end
   end
 end
