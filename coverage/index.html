@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.2/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.2/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.2/favicon_yellow.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.2/favicon_red.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.2/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-02-27T13:16:37+02:00">2018-02-27T13:16:37+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-02-28T16:19:28+02:00">2018-02-28T16:19:28+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">85.62%</span></span>
+    (<span class="covered_percent"><span class="red">79.33%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.31
+         1.23
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>18</b> files in total.
-    <b>153</b> relevant lines. 
-    <span class="green"><b>131</b> lines covered</span> and
-    <span class="red"><b>22</b> lines missed </span>
+    <b>20</b> files in total.
+    <b>179</b> relevant lines. 
+    <span class="green"><b>142</b> lines covered</span> and
+    <span class="red"><b>37</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -63,10 +63,20 @@
       <tr>
         <td class="strong"><a href="#9bbce612ada4600735d1f0fcd2d82aeabbb65db6" class="src_link" title="app/channels/application_cable/connection.rb">app/channels/application_cable/connection.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>4</td>
-        <td>4</td>
+        <td>19</td>
+        <td>16</td>
         <td>0</td>
-        <td>4</td>
+        <td>16</td>
+        <td>0.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#6cc6083886d468d8611361a177a284c4c2b2e5cf" class="src_link" title="app/channels/web_notifications_channel.rb">app/channels/web_notifications_channel.rb</a></td>
+        <td class="red strong">0.0 %</td>
+        <td>6</td>
+        <td>5</td>
+        <td>0</td>
+        <td>5</td>
         <td>0.0</td>
       </tr>
       
@@ -83,7 +93,7 @@
       <tr>
         <td class="strong"><a href="#71a2bf5a1dcf1bb665c6e25c284a8302945c81c6" class="src_link" title="app/controllers/friendships_controller.rb">app/controllers/friendships_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>9</td>
+        <td>10</td>
         <td>6</td>
         <td>6</td>
         <td>0</td>
@@ -94,19 +104,19 @@
         <td class="strong"><a href="#5ecf0a5052eda1a7fd7031a7ce56a2e17ec397ff" class="src_link" title="app/controllers/stocks_controller.rb">app/controllers/stocks_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>13</td>
-        <td>8</td>
-        <td>8</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
         <td>1.1</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#cc51f4fe6a3c8d79cd219fb3e1aa9c34a45237a9" class="src_link" title="app/controllers/user_stocks_controller.rb">app/controllers/user_stocks_controller.rb</a></td>
-        <td class="red strong">79.31 %</td>
-        <td>56</td>
-        <td>29</td>
-        <td>23</td>
-        <td>6</td>
+        <td class="yellow strong">86.67 %</td>
+        <td>55</td>
+        <td>30</td>
+        <td>26</td>
+        <td>4</td>
         <td>1.3</td>
       </tr>
       
@@ -123,7 +133,7 @@
       <tr>
         <td class="strong"><a href="#4b01c41574ad431c9a9436d6a177e9d01cba3b13" class="src_link" title="app/controllers/welcome_controller.rb">app/controllers/welcome_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>4</td>
+        <td>11</td>
         <td>2</td>
         <td>2</td>
         <td>0</td>
@@ -162,12 +172,22 @@
       
       <tr>
         <td class="strong"><a href="#38729786c510baaf21cc10139fd891f3013d564a" class="src_link" title="app/jobs/application_job.rb">app/jobs/application_job.rb</a></td>
-        <td class="red strong">0.0 %</td>
+        <td class="green strong">100.0 %</td>
         <td>2</td>
-        <td>2</td>
+        <td>1</td>
+        <td>1</td>
         <td>0</td>
-        <td>2</td>
-        <td>0.0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#f566e5ead365959013c752d1b0dc281cd22a7b19" class="src_link" title="app/jobs/send_new_price_job.rb">app/jobs/send_new_price_job.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>7</td>
+        <td>4</td>
+        <td>4</td>
+        <td>0</td>
+        <td>2.5</td>
       </tr>
       
       <tr>
@@ -202,12 +222,12 @@
       
       <tr>
         <td class="strong"><a href="#897fa57334bb3531f072b4f5942973537d61b265" class="src_link" title="app/models/stock.rb">app/models/stock.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>38</td>
-        <td>20</td>
-        <td>20</td>
-        <td>0</td>
-        <td>2.0</td>
+        <td class="green strong">92.0 %</td>
+        <td>46</td>
+        <td>25</td>
+        <td>23</td>
+        <td>2</td>
+        <td>1.6</td>
       </tr>
       
       <tr>
@@ -223,11 +243,11 @@
       <tr>
         <td class="strong"><a href="#76d55d8e6b99d13490b1a391d7bd455ce762dac5" class="src_link" title="app/models/user_stock.rb">app/models/user_stock.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>5</td>
         <td>4</td>
-        <td>3</td>
-        <td>3</td>
+        <td>4</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>2.8</td>
       </tr>
       
     </tbody>
@@ -239,7 +259,7 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="yellow">89.33%</span></span>
+    (<span class="covered_percent"><span class="green">92.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -251,8 +271,8 @@
   <div>
     <b>6</b> files in total.
     <b>75</b> relevant lines. 
-    <span class="green"><b>67</b> lines covered</span> and
-    <span class="red"><b>8</b> lines missed </span>
+    <span class="green"><b>69</b> lines covered</span> and
+    <span class="red"><b>6</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -281,7 +301,7 @@
       <tr>
         <td class="strong"><a href="#71a2bf5a1dcf1bb665c6e25c284a8302945c81c6" class="src_link" title="app/controllers/friendships_controller.rb">app/controllers/friendships_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>9</td>
+        <td>10</td>
         <td>6</td>
         <td>6</td>
         <td>0</td>
@@ -292,19 +312,19 @@
         <td class="strong"><a href="#5ecf0a5052eda1a7fd7031a7ce56a2e17ec397ff" class="src_link" title="app/controllers/stocks_controller.rb">app/controllers/stocks_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>13</td>
-        <td>8</td>
-        <td>8</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
         <td>1.1</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#cc51f4fe6a3c8d79cd219fb3e1aa9c34a45237a9" class="src_link" title="app/controllers/user_stocks_controller.rb">app/controllers/user_stocks_controller.rb</a></td>
-        <td class="red strong">79.31 %</td>
-        <td>56</td>
-        <td>29</td>
-        <td>23</td>
-        <td>6</td>
+        <td class="yellow strong">86.67 %</td>
+        <td>55</td>
+        <td>30</td>
+        <td>26</td>
+        <td>4</td>
         <td>1.3</td>
       </tr>
       
@@ -321,7 +341,7 @@
       <tr>
         <td class="strong"><a href="#4b01c41574ad431c9a9436d6a177e9d01cba3b13" class="src_link" title="app/controllers/welcome_controller.rb">app/controllers/welcome_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>4</td>
+        <td>11</td>
         <td>2</td>
         <td>2</td>
         <td>0</td>
@@ -336,20 +356,20 @@
           <div class="file_list_container" id="Models">
   <h2>
     <span class="group_name">Models</span>
-    (<span class="covered_percent"><span class="green">100.0%</span></span>
+    (<span class="covered_percent"><span class="green">97.01%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.71
+         1.68
        </span>
     </span> hits/line)
   </h2>
   <a name="Models"></a>
   <div>
     <b>5</b> files in total.
-    <b>61</b> relevant lines. 
-    <span class="green"><b>61</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed </span>
+    <b>67</b> relevant lines. 
+    <span class="green"><b>65</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -387,12 +407,12 @@
       
       <tr>
         <td class="strong"><a href="#897fa57334bb3531f072b4f5942973537d61b265" class="src_link" title="app/models/stock.rb">app/models/stock.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>38</td>
-        <td>20</td>
-        <td>20</td>
-        <td>0</td>
-        <td>2.0</td>
+        <td class="green strong">92.0 %</td>
+        <td>46</td>
+        <td>25</td>
+        <td>23</td>
+        <td>2</td>
+        <td>1.6</td>
       </tr>
       
       <tr>
@@ -408,11 +428,11 @@
       <tr>
         <td class="strong"><a href="#76d55d8e6b99d13490b1a391d7bd455ce762dac5" class="src_link" title="app/models/user_stock.rb">app/models/user_stock.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>5</td>
         <td>4</td>
-        <td>3</td>
-        <td>3</td>
+        <td>4</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>2.8</td>
       </tr>
       
     </tbody>
@@ -537,20 +557,20 @@
           <div class="file_list_container" id="Jobs">
   <h2>
     <span class="group_name">Jobs</span>
-    (<span class="covered_percent"><span class="red">0.0%</span></span>
+    (<span class="covered_percent"><span class="green">100.0%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.0
+       <span class="green">
+         2.2
        </span>
     </span> hits/line)
   </h2>
   <a name="Jobs"></a>
   <div>
-    <b>1</b> files in total.
-    <b>2</b> relevant lines. 
-    <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>2</b> lines missed </span>
+    <b>2</b> files in total.
+    <b>5</b> relevant lines. 
+    <span class="green"><b>5</b> lines covered</span> and
+    <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -568,12 +588,22 @@
       
       <tr>
         <td class="strong"><a href="#38729786c510baaf21cc10139fd891f3013d564a" class="src_link" title="app/jobs/application_job.rb">app/jobs/application_job.rb</a></td>
-        <td class="red strong">0.0 %</td>
+        <td class="green strong">100.0 %</td>
         <td>2</td>
-        <td>2</td>
+        <td>1</td>
+        <td>1</td>
         <td>0</td>
-        <td>2</td>
-        <td>0.0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#f566e5ead365959013c752d1b0dc281cd22a7b19" class="src_link" title="app/jobs/send_new_price_job.rb">app/jobs/send_new_price_job.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>7</td>
+        <td>4</td>
+        <td>4</td>
+        <td>0</td>
+        <td>2.5</td>
       </tr>
       
     </tbody>
@@ -668,10 +698,10 @@
   </h2>
   <a name="Ungrouped"></a>
   <div>
-    <b>2</b> files in total.
-    <b>8</b> relevant lines. 
+    <b>3</b> files in total.
+    <b>25</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>8</b> lines missed </span>
+    <span class="red"><b>25</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -700,10 +730,20 @@
       <tr>
         <td class="strong"><a href="#9bbce612ada4600735d1f0fcd2d82aeabbb65db6" class="src_link" title="app/channels/application_cable/connection.rb">app/channels/application_cable/connection.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>4</td>
-        <td>4</td>
+        <td>19</td>
+        <td>16</td>
         <td>0</td>
-        <td>4</td>
+        <td>16</td>
+        <td>0.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#6cc6083886d468d8611361a177a284c4c2b2e5cf" class="src_link" title="app/channels/web_notifications_channel.rb">app/channels/web_notifications_channel.rb</a></td>
+        <td class="red strong">0.0 %</td>
+        <td>6</td>
+        <td>5</td>
+        <td>0</td>
+        <td>5</td>
         <td>0.0</td>
       </tr>
       
@@ -770,9 +810,9 @@
     <h3>app/channels/application_cable/connection.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>4</b> relevant lines. 
+      <b>16</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="red"><b>16</b> lines missed.</span>
     </div>
   </div>
   
@@ -794,10 +834,155 @@
         <li class="missed" data-hits="0" data-linenumber="3">
           
           
+          <code class="ruby">    identified_by :current_user</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="5">
+          
+          
+          <code class="ruby">    def connect</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="6">
+          
+          
+          <code class="ruby">      self.current_user = find_verfied_user</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="9">
+          
+          
+          <code class="ruby">    protected</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="11">
+          
+          
+          <code class="ruby">    def find_verfied_user</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">      if current_user = env[&#39;warden&#39;].user</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
+          
+          <code class="ruby">        current_user</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
+          
+          <code class="ruby">        reject_unauthorized_connection</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
+        <li class="missed" data-hits="0" data-linenumber="19">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="6cc6083886d468d8611361a177a284c4c2b2e5cf">
+  <div class="header">
+    <h3>app/channels/web_notifications_channel.rb</h3>
+    <h4><span class="red">0.0 %</span> covered</h4>
+    <div>
+      <b>5</b> relevant lines. 
+      <span class="green"><b>0</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="missed" data-hits="0" data-linenumber="1">
+          
+          
+          <code class="ruby">class WebNotificationsChannel &lt; ApplicationCable::Channel</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="2">
+          
+          
+          <code class="ruby">  def subscribed</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">    # stream_for current_user</code>
+        </li>
+      
         <li class="missed" data-hits="0" data-linenumber="4">
+          
+          
+          <code class="ruby">    stream_from &quot;web_notifications&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="5">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="6">
           
           
           <code class="ruby">end</code>
@@ -879,13 +1064,13 @@
         <li class="missed" data-hits="0" data-linenumber="10">
           
           
-          <code class="ruby">    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])</code>
+          <code class="ruby">    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="11">
           
           
-          <code class="ruby">    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name])</code>
+          <code class="ruby">    devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -952,22 +1137,28 @@
         <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
-          <code class="ruby">      format.html { redirect_to my_friends_path, notice: &#39;Friend was successfully removed&#39; }</code>
+          <code class="ruby">      format.html { redirect_to my_friends_path,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">                                notice: &#39;Friend was successfully removed&#39; }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">end</code>
@@ -983,8 +1174,8 @@
     <h3>app/controllers/stocks_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>8</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1019,13 +1210,13 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">      @stock = Stock.find_by_ticker(params[:stock])</code>
+          <code class="ruby">      @stock = Stock.find_by_ticker(params[:stock]) ||</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="6">
           
-          <code class="ruby">      @stock ||= Stock.new_from_lookup(params[:stock])</code>
+          
+          <code class="ruby">        Stock.new_from_lookup(params[:stock])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
@@ -1078,11 +1269,11 @@
         <div class="source_table" id="cc51f4fe6a3c8d79cd219fb3e1aa9c34a45237a9">
   <div class="header">
     <h3>app/controllers/user_stocks_controller.rb</h3>
-    <h4><span class="red">79.31 %</span> covered</h4>
+    <h4><span class="yellow">86.67 %</span> covered</h4>
     <div>
-      <b>29</b> relevant lines. 
-      <span class="green"><b>23</b> lines covered</span> and
-      <span class="red"><b>6</b> lines missed.</span>
+      <b>30</b> relevant lines. 
+      <span class="green"><b>26</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
   
@@ -1098,247 +1289,247 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :set_user_stock, only: [:show, :edit, :update, :destroy]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby">  # POST /user_stocks</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">  # POST /user_stocks.json</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
           <code class="ruby">  def create</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="3">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    new_by_stock</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="4">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    respond_to do |format|</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      format.html do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        if @user_stock.save</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="7">
           <span class="hits">2</span>
           
-          <code class="ruby">    if params[:stock_id].present?</code>
+          <code class="ruby">          redirect_to my_portfolio_path,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="8">
           
-          <code class="ruby">      @user_stock = UserStock.new(stock_id: params[:stock_id], user: current_user)</code>
+          
+          <code class="ruby">            notice: &quot;Stock #{@user_stock.stock.ticker} was successfully added&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      stock = Stock.find_by_ticker(params[:stock_ticker])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      if stock</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
-          
-          <code class="ruby">        @user_stock = UserStock.new(stock:stock, user: current_user)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        stock = Stock.new_from_lookup(params[:stock_ticker])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="15">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        if stock.save</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
-          
-          <code class="ruby">          @user_stock = UserStock.new(stock: stock, user: current_user)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
           <code class="ruby">        else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="18">
+        <li class="missed" data-hits="0" data-linenumber="10">
           
           
-          <code class="ruby">          @user_stock = nil</code>
+          <code class="ruby">          redirect_to my_portfolio_path, error: &quot;Stock cannot be created&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="19">
-          
-          
-          <code class="ruby">          flash[:error] = &#39;Stock is not available&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="24">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    respond_to do |format|</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="25">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      if @user_stock.save</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="26">
-          <span class="hits">4</span>
-          
-          <code class="ruby">        format.html { redirect_to my_portfolio_path,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">          notice: &quot;Stock #{@user_stock.stock.ticker} was successfully added&quot; }</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="28">
-          <span class="hits">2</span>
-          
-          <code class="ruby">        format.json { render :show, status: :created, location: @user_stock }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="30">
-          
-          
-          <code class="ruby">        format.html { render :new }</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="31">
-          
-          
-          <code class="ruby">        format.json { render json: @user_stock.errors, status: :unprocessable_entity }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
-          <code class="ruby">  # DELETE /user_stocks/1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
-          <code class="ruby">  # DELETE /user_stocks/1.json</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="39">
+        <li class="covered" data-hits="2" data-linenumber="17">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @user_stock = UserStock.find(params[:id])</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="18">
           <span class="hits">2</span>
           
           <code class="ruby">    @user_stock.destroy</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="40">
+        <li class="covered" data-hits="2" data-linenumber="19">
           <span class="hits">2</span>
           
           <code class="ruby">    respond_to do |format|</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="41">
+        <li class="covered" data-hits="4" data-linenumber="20">
           <span class="hits">4</span>
           
-          <code class="ruby">      format.html { redirect_to my_portfolio_path, notice: &#39;Stock was successfully removed from portfolio.&#39; }</code>
+          <code class="ruby">      format.html { redirect_to my_portfolio_path,</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="42">
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">                    notice: &#39;Stock was successfully removed from portfolio.&#39; }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="22">
           <span class="hits">2</span>
           
           <code class="ruby">      format.json { head :no_content }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def new_by_stock</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="29">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    if params[:stock_id].present?</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @user_stock = UserStock.new(stock_id: params[:stock_id],</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">                                  user: current_user)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      new_by_ticker</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def new_by_ticker</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    stock = Stock.find_by_ticker(params[:stock_ticker])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    if stock</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="40">
+          
+          
+          <code class="ruby">      @user_stock = UserStock.new(stock: stock, user: current_user)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      new_by_lookup</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
@@ -1362,64 +1553,58 @@
         <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">  def new_by_lookup</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="covered" data-hits="1" data-linenumber="47">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
+          <code class="ruby">    stock = Stock.new_from_lookup(params[:stock_ticker])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
-          <code class="ruby">    def set_user_stock</code>
+          <code class="ruby">    if stock.save</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="49">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="49">
+          <span class="hits">1</span>
           
-          <code class="ruby">      @user_stock = UserStock.find(params[:id])</code>
+          <code class="ruby">      @user_stock = UserStock.new(stock: stock, user: current_user)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
           
           
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="51">
+          
+          
+          <code class="ruby">      @user_stock = nil</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="52">
+          
+          
+          <code class="ruby">      flash[:error] = &#39;Stock is not available&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="52">
-          
-          
-          <code class="ruby">    # Never trust parameters from the scary internet, only allow the white list through.</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="53">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    def user_stock_params</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="54">
-          
-          
-          <code class="ruby">      params.require(:user_stock).permit(:user, :stock)</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby">end</code>
@@ -1483,7 +1668,7 @@
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
@@ -1507,7 +1692,7 @@
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="12">
@@ -1537,7 +1722,7 @@
         <li class="covered" data-hits="2" data-linenumber="16">
           <span class="hits">2</span>
           
-          <code class="ruby">      format.js { render &#39;search.js.erb.coffee&#39;}</code>
+          <code class="ruby">      format.js { render &#39;search.js.erb.coffee&#39; }</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="17">
@@ -1561,7 +1746,7 @@
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="21">
@@ -1597,7 +1782,7 @@
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="27">
@@ -1627,7 +1812,7 @@
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="32">
@@ -1639,7 +1824,7 @@
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="34">
@@ -1700,10 +1885,52 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  def index; end</code>
+          <code class="ruby">  def index</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">    #WebNotificationsChannel.broadcast_to(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">    #  current_user,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">    #  title: &#39;New things 1!&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">    #  body: &#39;All the news fit to print&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">    #) </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">    #ActionCable.server.broadcast &quot;web_notifications&quot;, { title: &#39;New things 2!&#39;, body: &#39;All the news fit to print&#39;} </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">end</code>
@@ -1816,24 +2043,85 @@
         <div class="source_table" id="38729786c510baaf21cc10139fd891f3013d564a">
   <div class="header">
     <h3>app/jobs/application_job.rb</h3>
-    <h4><span class="red">0.0 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <b>1</b> relevant lines. 
+      <span class="green"><b>1</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
   <pre>
     <ol>
       
-        <li class="missed" data-hits="0" data-linenumber="1">
-          
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
           
           <code class="ruby">class ApplicationJob &lt; ActiveJob::Base</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="2">
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="f566e5ead365959013c752d1b0dc281cd22a7b19">
+  <div class="header">
+    <h3>app/jobs/send_new_price_job.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class SendNewPriceJob &lt; ApplicationJob</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  queue_as :default</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def perform(stock)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="5">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    ActionCable.server.broadcast &quot;web_notifications&quot;, stock.last_price</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">end</code>
@@ -1982,11 +2270,11 @@
         <div class="source_table" id="897fa57334bb3531f072b4f5942973537d61b265">
   <div class="header">
     <h3>app/models/stock.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="green">92.0 %</span> covered</h4>
     <div>
-      <b>20</b> relevant lines. 
-      <span class="green"><b>20</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>25</b> relevant lines. 
+      <span class="green"><b>23</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -2020,202 +2308,250 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  class &lt;&lt; self</code>
+          <code class="ruby">  after_create_commit :send_new_price</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
+          <code class="ruby">  after_update_commit :send_new_price</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class &lt;&lt; self</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
           <code class="ruby">    def find_by_ticker(ticker)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="7">
+        <li class="covered" data-hits="6" data-linenumber="9">
           <span class="hits">6</span>
           
           <code class="ruby">      find_by(ticker: ticker)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">    def new_from_lookup(ticker)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="11">
+        <li class="covered" data-hits="2" data-linenumber="13">
           <span class="hits">2</span>
           
           <code class="ruby">      stock = StockQuote::Stock.quote(ticker)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">      correct?(stock) &amp;&amp; new(ticker: stock.symbol,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">                             name: stock.name,</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="14">
+        <li class="covered" data-hits="2" data-linenumber="16">
           <span class="hits">2</span>
           
           <code class="ruby">                             last_price: price(stock))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
           <code class="ruby">    def price(stock)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="18">
+        <li class="covered" data-hits="3" data-linenumber="20">
           <span class="hits">3</span>
           
           <code class="ruby">      eod_price(stock) || open_price(stock)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby">    </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    def correct?(stock)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">      stock.is_a?(StockQuote::Stock) &amp;&amp;</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="23">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
           
-          <code class="ruby">        stock.symbol &amp;&amp;</code>
+          <code class="ruby">    def correct?(stock)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby">        !stock.symbol.empty?</code>
+          <code class="ruby">      stock.is_a?(StockQuote::Stock) &amp;&amp;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="covered" data-hits="2" data-linenumber="25">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">        stock.symbol &amp;&amp;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby">        !stock.symbol.empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
           <code class="ruby">    def eod_price(stock)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="28">
+        <li class="covered" data-hits="3" data-linenumber="30">
           <span class="hits">3</span>
           
           <code class="ruby">      eod_price = stock.eo</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="29">
+        <li class="covered" data-hits="3" data-linenumber="31">
           <span class="hits">3</span>
           
           <code class="ruby">      eod_price &amp;&amp; !eod_price.empty? &amp;&amp; eod_price.to_f</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">    def open_price(stock)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="33">
+        <li class="covered" data-hits="3" data-linenumber="35">
           <span class="hits">3</span>
           
           <code class="ruby">      open_price = stock.op</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="34">
+        <li class="covered" data-hits="3" data-linenumber="36">
           <span class="hits">3</span>
           
-          <code class="ruby">      return 0 if !open_price || open_price.empty? </code>
+          <code class="ruby">      return 0 if !open_price || open_price.empty?</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="35">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="37">
+          
           
           <code class="ruby">      open_price.delete(&#39;,&#39;).to_f</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def send_new_price</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="44">
+          
+          
+          <code class="ruby">    SendNewPriceJob.perform_later self</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">end</code>
@@ -2327,7 +2663,7 @@
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
@@ -2351,7 +2687,7 @@
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
@@ -2375,7 +2711,7 @@
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
@@ -2405,7 +2741,7 @@
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="29">
@@ -2429,7 +2765,7 @@
         <li class="never" data-hits="" data-linenumber="32">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="33">
@@ -2441,7 +2777,7 @@
         <li class="covered" data-hits="5" data-linenumber="34">
           <span class="hits">5</span>
           
-          <code class="ruby">    users.reject { |user| user.id == self.id }</code>
+          <code class="ruby">    users.reject { |user| user.id == id }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
@@ -2453,7 +2789,7 @@
         <li class="never" data-hits="" data-linenumber="36">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="37">
@@ -2495,7 +2831,7 @@
         <li class="never" data-hits="" data-linenumber="43">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="44">
@@ -2507,7 +2843,7 @@
         <li class="covered" data-hits="2" data-linenumber="45">
           <span class="hits">2</span>
           
-          <code class="ruby">    matches(&#39;first_name&#39;, param)    </code>
+          <code class="ruby">    matches(&#39;first_name&#39;, param)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
@@ -2519,7 +2855,7 @@
         <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="48">
@@ -2543,7 +2879,7 @@
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="52">
@@ -2567,7 +2903,7 @@
         <li class="never" data-hits="" data-linenumber="55">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="56">
@@ -2604,8 +2940,8 @@
     <h3>app/models/user_stock.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2631,7 +2967,13 @@
           <code class="ruby">  belongs_to :stock</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="covered" data-hits="8" data-linenumber="4">
+          <span class="hits">8</span>
+          
+          <code class="ruby">  after_create_commit { SendNewPriceJob.perform_later self.stock }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby">end</code>
