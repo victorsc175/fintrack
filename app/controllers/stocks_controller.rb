@@ -5,7 +5,6 @@ class StocksController < ApplicationController
       @stock = Stock.find_by_ticker(params[:stock])
       @stock ||= Stock.new_from_lookup(params[:stock])
     end
-    Stock.first.update(last_price: 0.13)
     respond_to do |format|
       format.js { render 'search.js.erb.coffee' }
       format.html { render 'users/my_portfolio' }
