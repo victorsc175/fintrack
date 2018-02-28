@@ -14,7 +14,8 @@ table.table.table-triped
       tr
         td = user_stock.stock.name
         td = user_stock.stock.ticker
-        td = user_stock.stock.last_price
+        td(id="price-for-#{user_stock.stock.id}") 
+          = user_stock.stock.last_price
         - if @user.id == current_user.id
           td
             = link_to 'Delete', user_stock_path(user_stock),

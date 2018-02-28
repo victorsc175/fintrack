@@ -2,6 +2,8 @@
 class Stock < ApplicationRecord
   has_many :user_stocks
   has_many :users, through: :user_stocks
+  after_create_commit :send_new_price
+  after_update_commit :send_new_price
   class << self
     def find_by_ticker(ticker)
       find_by(ticker: ticker)
@@ -34,5 +36,11 @@ class Stock < ApplicationRecord
       return 0 if !open_price || open_price.empty?
       open_price.delete(',').to_f
     end
+  end
+  
+  private
+  
+  def send_new_price
+    SendNewPriceJob.perform_later self
   end
 end
