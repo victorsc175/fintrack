@@ -3,12 +3,7 @@ class UserStocksController < ApplicationController
     new_by_stock
     respond_to do |format|
       format.html do
-        if @user_stock.save
-          redirect_to my_portfolio_path,
-            notice: "Stock #{@user_stock.stock.ticker} was successfully added"
-        else
-          redirect_to my_portfolio_path, error: "Stock cannot be created"
-        end
+        redirect_to_portfolio(@user_stock.save)
       end
     end
   end
@@ -17,8 +12,10 @@ class UserStocksController < ApplicationController
     @user_stock = UserStock.find(params[:id])
     @user_stock.destroy
     respond_to do |format|
-      format.html { redirect_to my_portfolio_path,
-                    notice: 'Stock was successfully removed from portfolio.' }
+      format.html do
+        redirect_to my_portfolio_path,
+                    notice: 'Stock was successfully removed from portfolio.'
+      end
       format.json { head :no_content }
     end
   end
@@ -51,5 +48,14 @@ class UserStocksController < ApplicationController
       @user_stock = nil
       flash[:error] = 'Stock is not available'
     end
+  end
+
+  def redirect_to_portfolio(saved)
+    message = if saved
+                { notice: "Stock #{@user_stock.stock.ticker} was successfully added" }
+              else
+                { error: 'Stock cannot be created' }
+    end
+    redirect_to my_portfolio_path, message
   end
 end

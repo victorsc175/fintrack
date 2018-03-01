@@ -39,9 +39,9 @@ class Stock < ApplicationRecord
       open_price.delete(',').to_f
     end
   end
-  
+
   private
-  
+
   def send_new_price
     SendNewPriceJob.perform_later self
   end
