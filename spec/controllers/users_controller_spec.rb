@@ -31,7 +31,7 @@ RSpec.describe UsersController, type: :controller do
     it 'returns list of friends' do
       FactoryBot.create :friendship, user: user, friend: friend
       get :my_friends
-      expect(assigns(:friendships).first).to eq(friend)
+      expect(assigns(:friends).first).to eq(friend)
       expect(response).to have_http_status(:success)
     end
   end

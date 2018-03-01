@@ -36,6 +36,7 @@ RSpec.describe UserStocksController, type: :controller do
   let(:stock) { FactoryBot.create :stock }
   let(:user_stock) { FactoryBot.create :user_stock, user: user, stock: stock }
   let(:ticker) { 'RT' }
+  let(:incorrect_ticker) { 'FAKE' }
 
   before(:each) do
     @request.env['devise.mapping'] = Devise.mappings[:user]
@@ -44,10 +45,10 @@ RSpec.describe UserStocksController, type: :controller do
 
   describe 'POST #create' do
     it 'creates a new UserStock for locally stored stock' do
-      expect(assigns(:user_stock)).to eq(user.user_stocks.first)
       expect do
         post :create, params: { stock_id: stock.id }, session: valid_session
       end.to change(user.stocks, :count).by(1)
+      expect(assigns(:user_stock)).to eq(user.user_stocks.first)
       expect(response).to redirect_to(my_portfolio_path)
     end
 
@@ -55,6 +56,19 @@ RSpec.describe UserStocksController, type: :controller do
       expect do
         post :create, params: { stock_ticker: ticker }, session: valid_session
       end.to change(user.stocks, :count).by(1)
+      expect(response).to redirect_to(my_portfolio_path)
+    end
+    
+    it 'creates UserStock for stock loaded earlier' do
+      expect do
+        post :create, params: { stock_ticker: stock.ticker }, session: valid_session
+      end.to change(user.stocks, :count).by(1)
+      expect(response).to redirect_to(my_portfolio_path)
+    end
+    
+    it 'does not create new UserStock for incorrect ticker' do
+      post :create, params: { stock_ticker: incorrect_ticker }, session: valid_session
+      expect(assigns(:user_stock)).to_not be_valid
       expect(response).to redirect_to(my_portfolio_path)
     end
   end

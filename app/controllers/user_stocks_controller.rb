@@ -42,12 +42,8 @@ class UserStocksController < ApplicationController
 
   def new_by_lookup
     stock = Stock.new_from_lookup(params[:stock_ticker])
-    if stock.save
-      @user_stock = UserStock.new(stock: stock, user: current_user)
-    else
-      @user_stock = nil
-      flash[:error] = 'Stock is not available'
-    end
+    attr = stock && stock.save ? { stock: stock, user: current_user } : {}
+    @user_stock = UserStock.new(attr)
   end
 
   def redirect_to_portfolio(saved)
