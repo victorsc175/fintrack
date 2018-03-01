@@ -1,15 +1,15 @@
 require 'ffaker'
-class SendNewPriceJob < ApplicationJob
+class SendNewsJob < ApplicationJob
   queue_as :default
-  SEND_NEWS = 20
+  DELAY = 3
 
-  def perform(stock)
-    for i in 1..SEND_NEWS do
+  def perform(message)
+    loop do
       company_name = FFaker::Company.name + ' ' + FFaker::Company.suffix
       message = FFaker::Company.catch_phrase
       full = 'Last news: ' + company_name + ', ' + message
       ActionCable.server.broadcast 'web_notifications', full 
-      sleep 6
+      sleep DELAY
     end
   end
 end

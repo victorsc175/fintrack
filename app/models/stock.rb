@@ -35,7 +35,7 @@ class Stock < ApplicationRecord
 
     def open_price(stock)
       open_price = stock.op
-      return 0 if !open_price || open_price.empty?
+      return 0 if open_price.blank?
       open_price.delete(',').to_f
     end
   end

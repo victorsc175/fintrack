@@ -1,5 +1,6 @@
 # User model
 class User < ApplicationRecord
+  SEND_NEWS = 20
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
