@@ -10,15 +10,4 @@ table.table.table-triped
       - if @user.id == current_user.id
         th Actions
   tbody
-    - @user_stocks.each do |user_stock|
-      tr
-        td = user_stock.stock.name
-        td = user_stock.stock.ticker
-        td(id="price-for-#{user_stock.stock.id}") 
-          = user_stock.stock.last_price
-        - if @user.id == current_user.id
-          td
-            = link_to 'Delete', user_stock_path(user_stock),
-                                method: :delete,
-                                data: { confirm: 'Are you sure?' },
-                                class: 'btn btn-xs btn-danger action'
+    = render partial: 'stocks/user_stock', collection: @user_stocks

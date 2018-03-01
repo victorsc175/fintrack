@@ -7,7 +7,7 @@ dl.dl-horizontal
     strong Email:
   dd = @user.email
   
-- if @user.stocks.size > 0
+- if @user.stocks.any?
   = render 'stocks/list'
 - else
   p.lead This user is not tracking any stocks

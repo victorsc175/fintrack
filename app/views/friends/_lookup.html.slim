@@ -11,28 +11,10 @@
       .col-xs-2
         = button_tag type: :submit, class: 'btn btn-lg btn-success', id: 'btn-lookup' do
           i.fa.fa-search 
-  = render 'common/spinner' 
-  - if @users && !@users.empty?
+  = render 'shared/spinner' 
+  - unless @users.blank?
     #friend-lookup-results.well.results-block.col-md-10
       table.search-result-table.col-md-12
         tbody
-          - @users.each do |user|
-            tr
-              td
-                strong Name:
-                = user.full_name
-              td
-                strong Email:
-                = user.email
-              td
-                strong Profile:
-                = link_to 'View Profile', user_path(user),
-                                          class: 'btn btn-xs btn-success action'
-                - if current_user.not_friends_with?(user)
-                  = link_to 'Add as my friend', add_friend_path(user: current_user, friend: user),
-                                                class: 'btn btn-xs btn-success action',
-                                                method: :post
-                - else
-                  span.label.label-primary.action
-                    'You are friends
+          = render partial: 'friends/user', collection: @users
   #friend-lookup-errors
