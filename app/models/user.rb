@@ -4,9 +4,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :user_stocks
+  validates_presence_of :email, :password
+  has_many :user_stocks, dependent: :destroy
   has_many :stocks, through: :user_stocks
-  has_many :friendships
+  has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
   def full_name
     return "#{first_name} #{last_name}" if first_name || last_name

@@ -74,6 +74,8 @@ end
 
 Then("I can change profile details") do
   fill_in 'First name', with: 'Changed'
+  fill_in 'Password', with: 'specmanager'
+  fill_in 'Password confirmation', with: 'specmanager'
   fill_in 'Current password', with: 'specmanager'
   click_button 'Update'
   expect(page).to have_content('Your account has been updated successfully.')

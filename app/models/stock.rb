@@ -1,5 +1,7 @@
 # Methods for stocks
 class Stock < ApplicationRecord
+  validates_presence_of :ticker, :name, :last_price
+  validates_uniqueness_of :ticker
   has_many :user_stocks
   has_many :users, through: :user_stocks
   after_create_commit :send_new_price
