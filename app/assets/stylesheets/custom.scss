@@ -1,7 +1,11 @@
 body {
-    min-width:380px;
+    min-width:360px;
     width: auto !important;
-    width:380px;
+    width:360px;
+}
+
+#main, #stock-lookup-results, #friend-lookup-results {
+  display: none;
 }
 
 .results-block {

@@ -3,3 +3,7 @@ window.hideSpinner = ->
 
 window.showSpinner = ->
 	$('#spinner').show()
+	
+$(document).ready ->
+  $("#main").fadeIn()
+

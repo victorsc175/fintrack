@@ -10,24 +10,32 @@
           i.fa.fa-search 
   = render 'shared/spinner' 
   - if @stock
-    #stock-lookup-results.well.results-block
-      strong Symbol:
-      = @stock.ticker
-      strong Name:
-      = @stock.name
-      strong Price:
-      = @stock.last_price
-      - if current_user.can_add_stock?(@stock.ticker)
-        = link_to 'Add to my Stocks', user_stocks_path(user:current_user,
-                                      stock_ticker: @stock.ticker,
-                                      stock_id: @stock.id || ''),
-                                      class: 'btn btn-xs btn-success action',
-                                      method: :post
-      - else
-        span.label.label-default.action
-          'You have added 
-          - unless current_user.under_stock_limit?
-            '10 stocks
-          - if current_user.stock_already_added?(@stock.ticker)
-            'this stock already
+    #stock-lookup-results.well.results-block.col-md-10
+      table.search-result-table.col-md-12
+        tbody
+          tr
+            td
+              strong Symbol:
+              = @stock.ticker
+            td
+              strong Name:
+              = @stock.name
+            td
+              strong Price:
+              = @stock.last_price
+            td
+              strong Action:
+              - if current_user.can_add_stock?(@stock.ticker)
+                = link_to 'Add to my Stocks', user_stocks_path(user:current_user,
+                                              stock_ticker: @stock.ticker,
+                                              stock_id: @stock.id || ''),
+                                              class: 'btn btn-xs btn-success action',
+                                              method: :post
+              - else
+                span.label.label-default.action
+                  'You have added 
+                  - unless current_user.under_stock_limit?
+                    '10 stocks
+                  - if current_user.stock_already_added?(@stock.ticker)
+                    'this stock already
   #stock-lookup-errors
