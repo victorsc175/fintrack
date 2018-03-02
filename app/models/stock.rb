@@ -4,7 +4,6 @@ class Stock < ApplicationRecord
   validates_uniqueness_of :ticker
   has_many :user_stocks
   has_many :users, through: :user_stocks
-  after_create_commit :send_new_price
   after_update_commit :send_new_price
   class << self
     def find_by_ticker(ticker)
