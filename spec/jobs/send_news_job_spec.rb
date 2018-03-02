@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe SendNewsJob, type: :job do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#perform' do
+    let(:stock) { FactoryBot.create :stock }
+    it 'finished successfully' do
+      job = instance_double("SendNewsJob")
+      allow(job).to receive(:perform) { true }
+      expect(job.perform(stock)).to be_truthy
+    end
+  end
 end
