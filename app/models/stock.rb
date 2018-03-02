@@ -4,7 +4,6 @@ class Stock < ApplicationRecord
   validates_uniqueness_of :ticker
   has_many :user_stocks
   has_many :users, through: :user_stocks
-  after_update_commit :send_new_price
   class << self
     def find_by_ticker(ticker)
       find_by(ticker: ticker)
@@ -37,11 +36,5 @@ class Stock < ApplicationRecord
       return 0 if open_price.blank?
       open_price.delete(',').to_f
     end
-  end
-
-  private
-
-  def send_new_price
-    SendNewPriceJob.perform_later self
   end
 end
