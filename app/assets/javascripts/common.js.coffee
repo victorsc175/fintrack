@@ -6,4 +6,4 @@ window.showSpinner = ->
 	
 $(document).ready ->
   $("#main").fadeIn()
-
+  $("#messages").effect( "bounce", "slow")
