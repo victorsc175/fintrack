@@ -8,8 +8,8 @@ class SendNewsJob < ApplicationJob
       company = FFaker::Company
       company_name = company.name + ' ' + company.suffix
       message = company.catch_phrase
-      full = 'Hot News: ' + company_name + ', ' + message
-      ActionCable.server.broadcast 'web_notifications', full 
+      ActionCable.server.broadcast 'web_notifications',
+                                    company_name + ', ' + message 
       sleep DELAY
     end
   end

@@ -4,6 +4,8 @@ html lang="en"
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
+    noscript
+      meta http-equiv="refresh" content="2;url=http://yoursite.com/nojswarning.html"
     title= content_for?(:title) ? yield(:title) : "Fintrack"
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
@@ -19,6 +21,8 @@ html lang="en"
 
   body
     = render 'shared/navigation'
+    p#javascript_require
+      'No javascript, please enable JavaScript in order to use this website
     #main.container
       .row
         .col-lg-9
