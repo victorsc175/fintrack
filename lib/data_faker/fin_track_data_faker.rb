@@ -1,31 +1,20 @@
 module FinTrackDataFaker
   # Populate blog fake data
   class Builder
-    
-    
-    USERS = 25
-    POSTS = 60
-    PARAGRAPHS = 20
-    COMMENTS = 1000
-    MARKS_RANGE = 1..5
-    MARKS = 100
-    CREATORS = 7
-    MODERATORS = 2
-    SEO_KEYWORDS = 4
-    CLEAR_DATA = [Seo, Mark, Comment, Post, User].freeze
-    SEO_META_SIZE = 160
+    USERS = 10
+    DEFAULT_PASSWORD = 'fintrack'
+    FRIENDSHIPS = 50
+    STOCKS = 10
+    USER_STOCKS = 80
+    CLEAR_DATA = [User, Friendship, Stock, UserStock].freeze
 
     class << self
       def create_data
         destroy_old_data
-        
         create_users
-        set_creators
-        set_moderators
-        create_posts
-        create_comments
-        create_marks
-        create_seo
+        create_friendships
+        create_stocks
+        create_user_stocks
       end
 
       def destroy_old_data
@@ -35,32 +24,60 @@ module FinTrackDataFaker
       def create_users
         USERS.times { user.save! }
       end
-
-      def create_posts
-        POSTS.times { post(title, paragraphs(PARAGRAPHS), users.sample).save! }
+      
+      def create_friendships
+        users = User.all
+        FRIENDSHIPS.times do
+          user = users.sample
+          friend = users.sample
+          unless user.friends.include? friend
+            Friendship.create! user: user,
+                               friend: friend
+          end
+        end
       end
-
-      def create_comments
-        COMMENTS.times { comment(users.sample).save! }
+      
+      def create_stocks
+        data = [
+          ['FB', 'Facebook Inc',  173.29],
+          ['GOOG', 'Alphabet Inc', 1053.08],
+          ['P', 'Pandora Media Inc',  4.23],
+          ['RT', 'Ruby Tuesday, Inc.',  0.0],
+          ['AAPL', 'Apple Inc.',  172.8],
+          ['TT', 'TUI Travel Ltd', 0.0],
+          ['PP', 'Pacific Potash Corp', 0.05],
+          ['RE', 'Everest Re Group Ltd', 237.34],
+          ['IT', 'Gartner Inc', 113.07],
+          ['IR', 'Ingersoll-Rand PLC', 85.1]
+        ]
+        data.each do |stock|
+          Stock.create! ticker: stock[0],
+                       name: stock[1],
+                       last_price: stock[2]
+        end
       end
-
-      def create_marks
-        MARKS.times { mark(users.sample, posts.sample).save }
-      end
-
-      def create_seo
-        (users + posts).each { |i| i.create_seo(seo.attributes) }
+      
+      def create_user_stocks
+        users = User.all
+        stocks = Stock.all
+        USER_STOCKS.times do
+          user = users.sample
+          stock = stocks.sample
+          unless user.stocks.include? stock
+            UserStock.create! user: user,
+                               stock: stock
+          end
+        end
       end
 
       def user
         username = FFaker::Name.name
-        User.new name: username,
+        first_name = username.split.first
+        last_name = username.split.last
+        User.new first_name: first_name,
+                 last_name: last_name,
                  email: email(username),
-                 password: password(username)
-      end
-
-      def users
-        User.all
+                 password: DEFAULT_PASSWORD
       end
 
       def email(username)
@@ -72,58 +89,6 @@ module FinTrackDataFaker
 
       def password(username)
         email(username)
-      end
-
-      def paragraph
-        FFaker::Lorem.paragraph
-      end
-
-      def paragraphs(size)
-        FFaker::Lorem.paragraphs(size) * ' '
-      end
-
-      def title
-        FFaker::Lorem.sentence
-      end
-
-      def post(title, body, user)
-        Post.new title: title, body: body, user: user
-      end
-
-      def posts
-        Post.all
-      end
-
-      def comment(user)
-        body = FFaker::Lorem.paragraph
-        commentable_item = commentable
-        Comment.new body: body,
-                    user: user,
-                    commentable_id: commentable_item.id,
-                    commentable_type: commentable_item.class.to_s
-      end
-
-      def commentable
-        [User.all, Post.all].sample.sample
-      end
-
-      def mark(user, post)
-        value = MARKS_RANGE.to_a.sample
-        Mark.new value: value, user: user, post: post
-      end
-
-      def set_creators
-        User.first(CREATORS).each { |u| u.update creator: true }
-      end
-
-      def set_moderators
-        User.first(MODERATORS).each { |u| u.update moderator: true }
-      end
-
-      def seo
-        Seo.new title: FFaker::Lorem.sentence,
-                description: FFaker::Lorem.paragraph(1)[0...SEO_META_SIZE],
-                keywords: FFaker::Lorem.words(SEO_KEYWORDS)
       end
     end
   end

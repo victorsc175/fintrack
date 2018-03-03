@@ -18,5 +18,8 @@
             i.fa.fa-user
             span.current-user
               = current_user.full_name.present? ? current_user.full_name : current_user.email
-          
+    - else
+      ul.nav.navbar-nav.navbar-right.col-sm-4
+        li.col-sm-4.col-sm-push-8.logout
+          = link_to 'Login', new_user_session_path
           
