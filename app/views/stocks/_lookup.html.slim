@@ -10,21 +10,18 @@
           i.fa.fa-search 
   = render 'shared/spinner' 
   - if @stock
-    #stock-lookup-results.well.results-block.col-md-10
+    #stock-lookup-results.well.results-block.col-sm-10
       table.search-result-table.col-md-12
         tbody
           tr
             td
-              strong Symbol:
               = @stock.ticker
             td
-              strong Name:
-              = @stock.name
+              strong
+                = @stock.name
             td
-              strong Price:
               = @stock.last_price
             td
-              strong Action:
               - if current_user.can_add_stock?(@stock.ticker)
                 = link_to 'Add to my Stocks', user_stocks_path(user:current_user,
                                               stock_ticker: @stock.ticker,

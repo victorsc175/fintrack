@@ -1,7 +1,11 @@
 body {
-    min-width:360px;
+    min-width: 360px;
     width: auto !important;
-    width:360px;
+    width: 360px;
+}
+
+.well {
+  min-width: 400px;
 }
 
 #main, #stock-lookup-results, #friend-lookup-results {
@@ -56,3 +60,10 @@ span.current-user, span.spinner-message {
   margin-left: 10px;
 }
 
+td#user-action {
+  text-align: center;
+}
+
+.btn {
+  color: white !important;
+}

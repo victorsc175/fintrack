@@ -1,5 +1,7 @@
 tr
-  td = user_stock.stock.name
+  td
+    strong 
+      = user_stock.stock.name
   td = user_stock.stock.ticker
   td 
     span(id="price-for-#{user_stock.stock.id}") 
@@ -9,4 +11,4 @@ tr
         = link_to 'Delete', user_stock_path(user_stock),
                             method: :delete,
                             data: { confirm: 'Are you sure?' },
-                            class: 'btn btn-xs btn-danger action'
+                            class: 'btn btn-sm btn-danger action'
