@@ -1,5 +1,4 @@
 When("I go to My Friends page") do
-  visit '/'
   click_link 'My Friends'
 end
 
@@ -36,7 +35,7 @@ When("I search for friend by email") do
 end
 
 When("I add user as a friend") do
-  find('a', text: 'Add as my friend').trigger('click')
+  find('a', text: 'Add friend').trigger('click')
 end
 
 Then("I should see user in My Friends list") do
@@ -49,7 +48,7 @@ When("I remove user from friends") do
                            last_name: 'Black'
   fill_in 'search_param', with: 'some@email.com'
   find('button', id: 'btn-lookup').trigger('click')
-  find('a', text: 'Add as my friend').trigger('click')
+  find('a', text: 'Add friend').trigger('click')
   find('a', text: 'Remove Friend').trigger('click')
 end
 
@@ -63,7 +62,7 @@ When("I view friend's profile") do
                            last_name: 'Black'
   fill_in 'search_param', with: 'some@email.com'
   find('button', id: 'btn-lookup').trigger('click')
-  find('a', text: 'Add as my friend').trigger('click')
+  find('a', text: 'Add friend').trigger('click')
   click_link 'View Profile'
 end
 

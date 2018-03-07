@@ -2,7 +2,7 @@ tr
   td 
     strong
       = friend.full_name
-  td = friend.email
+  td = friend.email.truncate(30)
   td
     = link_to 'View Profile', user_path(friend),
                               class: 'btn btn-primary btn-sm action' 

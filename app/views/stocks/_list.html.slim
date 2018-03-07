@@ -2,7 +2,11 @@ table.table.table-triped
   thead
     tr
         th.page-header(colspan='4')
-          h3 My Stocks
+          h3
+            - if controller.action_name == 'my_portfolio' 
+              'My Portfolio
+            -else
+               'Portfolio
     tr
       th Name
       th Symbol

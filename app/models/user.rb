@@ -1,15 +1,27 @@
 # User model
 class User < ApplicationRecord
-  SEND_NEWS = 20
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  validates_presence_of :email, :password
+  EMAIL_MATCHER = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+  validates :first_name, length: { maximum: 20 }
+  validates :last_name, length: { maximum: 20 }
+  validates :email, presence: true,
+                    length: { maximum: 45 },
+                    uniqueness: true,
+                    format: { with: EMAIL_MATCHER,
+                              message: 'Invalid email' }
   has_many :user_stocks, dependent: :destroy
   has_many :stocks, through: :user_stocks
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
+  def self.demo
+    user = User.offset(rand(User.count)).limit(1).first
+    user.update(password: 'fintrack')
+    user  
+  end
+  
   def full_name
     return "#{first_name} #{last_name}" if first_name || last_name
     'Anonymous'

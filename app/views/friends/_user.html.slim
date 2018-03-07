@@ -1,7 +1,8 @@
 tr
   td
-    strong
-      = user.full_name
+    p
+      strong
+        = user.full_name
     p
       = user.email
   td
@@ -13,4 +14,5 @@ tr
         class: 'btn btn-xs btn-success action',
         method: :post
     - else
-      'Your friend
+      span.label.label-default.action
+        'Your friend

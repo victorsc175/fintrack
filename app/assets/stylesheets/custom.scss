@@ -5,10 +5,14 @@ body {
 }
 
 .well {
-  min-width: 400px;
+  min-width: 470px;
 }
 
-#main, #stock-lookup-results, #friend-lookup-results {
+#main {
+  display: none;
+}
+
+#stock-lookup-results, #friend-lookup-results {
   display: none;
 }
 
@@ -66,4 +70,8 @@ td#user-action {
 
 .btn {
   color: white !important;
+}
+
+.welcome-message {
+  margin-top: 30px;
 }

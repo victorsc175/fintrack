@@ -1,9 +1,13 @@
 Given("I am a guest user") do
-  # user is not logged in yet
+  FactoryBot.create :user, email: 'initial@email.com'
 end
 
 When("I go to Welcome page") do
  visit '/'
+end
+
+When("I click on Log in link") do
+  click_link 'Login'
 end
 
 When("I click on Sign up link") do
@@ -17,6 +21,12 @@ When("I fill in sign up details") do
   fill_in 'Password', with: 'testpassword'
   fill_in 'Password confirmation', with: 'testpassword'
   click_button 'Sign up'
+end
+
+When("I fill in sign up credentials") do
+  fill_in 'Email', with: 'victor@email.com'
+  fill_in 'Password', with: 'testpassword'
+  click_button 'Log in'
 end
 
 Then("I get new user registered") do
@@ -47,7 +57,7 @@ When("I fill in credentials") do
 end
 
 Then("I get user logged in") do
-  expect(page).to have_content('Signed in successfully.')
+  expect(page).to have_content('You have signed up successfully.')
 end
 
 When("I fill in credentials with wrong details") do
@@ -63,9 +73,12 @@ end
 Given("I am a logged in user") do
   FactoryBot.create :user
   visit '/'
-  fill_in 'Email', with: 'posted@email.com'
+  click_link 'Login'
+  click_link 'Sign up'
+  fill_in 'Email', with: 'posted2@email.com'
   fill_in 'Password', with: 'specmanager'
-  click_button 'Log in'
+  fill_in 'Password confirmation', with: 'specmanager'
+  click_button 'Sign up'
 end
 
 When("I go to My Profile page") do
@@ -86,5 +99,5 @@ Given("I log out") do
 end
 
 Then("I should be logged out") do
-  expect(page).to have_content('You need to sign in or sign up before continuing.')
+  expect(page).to have_content('Signed out successfully.')
 end

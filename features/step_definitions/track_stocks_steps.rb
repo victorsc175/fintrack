@@ -1,5 +1,4 @@
 When("I go to My Portfolio page") do
-  visit '/'
   click_link 'My Portfolio'
 end
 
@@ -33,8 +32,6 @@ Then("I should have the stock removed from the stock list") do
 end
 
 Then("I should have ability to add {int} stocks to my portfolio") do |int|
-  visit '/'
-  click_link 'My Portfolio'
   ['FB','BP','DF','RT','GOOG','DD','SA','XESQ','ZC','KLK'].each do |ticker|
     fill_in 'stock', with: ticker
     click_button 'btn-lookup'
@@ -43,5 +40,5 @@ Then("I should have ability to add {int} stocks to my portfolio") do |int|
   expect(page).to have_content('Stock KLK was successfully added')
   fill_in 'stock', with: 'P'
   click_button 'btn-lookup'
-  expect(page).to have_content('You have added 10 stocks')
+  expect(page).to have_content('Stock limit exceeded')
 end
