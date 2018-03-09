@@ -47,10 +47,11 @@ class UserStocksController < ApplicationController
   end
 
   def redirect_to_portfolio(saved)
-    message = if saved
-                { notice: "Stock #{@user_stock.stock.ticker} was successfully added" }
-              else
-                { error: 'Stock cannot be created' }
+    if saved
+      ticker = @user_stock.stock.ticker
+      message = { notice: "Stock #{ticker} was successfully added" }
+    else
+      message = { error: 'Stock cannot be created' }
     end
     redirect_to my_portfolio_path, message
   end

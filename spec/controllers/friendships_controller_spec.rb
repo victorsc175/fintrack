@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe FriendshipsController, type: :controller do
   let(:user) { FactoryBot.create :user }
-  let(:friend) { FactoryBot.create :user, email: 'friend@email.com', password: 'friend' }
+  let(:friend) do
+    FactoryBot.create :user, email: 'friend@email.com',
+                             password: 'friend'
+  end
   let(:friendship) { FactoryBot.create :friendship, user: user, friend: friend }
   let(:valid_session) { {} }
 

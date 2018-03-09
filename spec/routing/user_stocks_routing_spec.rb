@@ -7,7 +7,8 @@ RSpec.describe UserStocksController, type: :routing do
     end
 
     it 'routes to #destroy' do
-      expect(delete: '/user_stocks/1').to route_to('user_stocks#destroy', id: '1')
+      expect(delete: '/user_stocks/1').to route_to('user_stocks#destroy',
+                                                   id: '1')
     end
   end
 end

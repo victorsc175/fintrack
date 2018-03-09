@@ -2,14 +2,18 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   subject { FactoryBot.create :user }
-  let(:friend) { FactoryBot.create :user, email: 'friend@mail.com', first_name: 'John', last_name: 'Silver' }
+  let(:friend) do
+    FactoryBot.create :user, email: 'friend@mail.com',
+                             first_name: 'John',
+                             last_name: 'Silver'
+  end
   describe '.demo' do
     it 'returns demo user' do
       subject
       expect(described_class.demo).to be_instance_of(User)
     end
   end
-  
+
   describe '.search' do
     it 'returns empty set if param is blank' do
       expect(described_class.search('')).to be_empty

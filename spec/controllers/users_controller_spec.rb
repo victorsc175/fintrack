@@ -38,7 +38,8 @@ RSpec.describe UsersController, type: :controller do
 
   describe 'POST #search' do
     it 'returns list of friends with correct request' do
-      post :search, params: { search_param: friend.first_name }, session: valid_session
+      post :search, params: { search_param: friend.first_name },
+                    session: valid_session
       expect(assigns(:users)).to be_an(Array)
       expect(assigns(:users).size).to be > 0
       expect(response).to have_http_status(:success)

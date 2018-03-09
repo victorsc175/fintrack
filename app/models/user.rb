@@ -19,9 +19,9 @@ class User < ApplicationRecord
   def self.demo
     user = User.offset(rand(User.count)).limit(1).first
     user.update(password: 'fintrack')
-    user  
+    user
   end
-  
+
   def full_name
     return "#{first_name} #{last_name}" if first_name || last_name
     'Anonymous'

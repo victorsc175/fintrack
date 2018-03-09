@@ -58,16 +58,18 @@ RSpec.describe UserStocksController, type: :controller do
       end.to change(user.stocks, :count).by(1)
       expect(response).to redirect_to(my_portfolio_path)
     end
-    
+
     it 'creates UserStock for stock loaded earlier' do
       expect do
-        post :create, params: { stock_ticker: stock.ticker }, session: valid_session
+        post :create, params: { stock_ticker: stock.ticker },
+                      session: valid_session
       end.to change(user.stocks, :count).by(1)
       expect(response).to redirect_to(my_portfolio_path)
     end
-    
+
     it 'does not create new UserStock for incorrect ticker' do
-      post :create, params: { stock_ticker: incorrect_ticker }, session: valid_session
+      post :create, params: { stock_ticker: incorrect_ticker },
+                    session: valid_session
       expect(assigns(:user_stock)).to_not be_valid
       expect(response).to redirect_to(my_portfolio_path)
     end
@@ -77,13 +79,15 @@ RSpec.describe UserStocksController, type: :controller do
     it 'destroys the requested user_stock' do
       user_stock
       expect do
-        delete :destroy, params: { id: user_stock.to_param }, session: valid_session
+        delete :destroy, params: { id: user_stock.to_param },
+                         session: valid_session
       end.to change(UserStock, :count).by(-1)
     end
 
     it 'redirects to the user_stocks list' do
       user_stock
-      delete :destroy, params: { id: user_stock.to_param }, session: valid_session
+      delete :destroy, params: { id: user_stock.to_param },
+                       session: valid_session
       expect(response).to redirect_to(my_portfolio_path)
     end
   end
