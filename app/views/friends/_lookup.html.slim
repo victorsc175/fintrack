@@ -17,4 +17,6 @@
       table.search-result-table.col-md-12
         tbody
           = render partial: 'friends/user', collection: @users
-  #friend-lookup-errors
+  
+  #lookup-errors.col-md-12.text-warning
+    #friend-lookup-errors

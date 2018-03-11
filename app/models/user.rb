@@ -58,18 +58,14 @@ class User < ApplicationRecord
   end
 
   def self.first_name_matches(param)
-    matches('first_name', param)
+    where("lower(first_name) like ?", "%#{param}%")
   end
 
   def self.last_name_matches(param)
-    matches('last_name', param)
+    where("lower(last_name) like ?", "%#{param}%")
   end
 
   def self.email_matches(param)
-    matches('email', param)
-  end
-
-  def self.matches(field_name, param)
-    where("lower(#{field_name}) like ?", "%#{param}%")
+    where("lower(email) like ?", "%#{param}%")
   end
 end
