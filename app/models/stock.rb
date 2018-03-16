@@ -10,7 +10,7 @@ class Stock < ApplicationRecord
     end
 
     def new_from_lookup(ticker)
-      stock = StockQuote::Stock.quote(ticker)
+      stock = StockQuote::Stock.quote(ticker) rescue nil
       correct?(stock) && new(ticker: stock.symbol,
                              name: stock.name,
                              last_price: price(stock))
